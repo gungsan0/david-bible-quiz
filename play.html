@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>다윗 성경 퀴즈 - 참여하기</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="screen-play">
+  <div class="play-wrap">
+
+    <!-- 닉네임 입력 -->
+    <section id="p-join" class="p-view">
+      <div class="play-logo">
+        <span class="logo-david">DAVID</span>
+        <span class="logo-quiz">BIBLE QUIZ</span>
+      </div>
+      <h2 class="p-title">다윗 성경 퀴즈 대회</h2>
+      <p class="p-sub">이름(또는 속회/팀명)을 입력하고 참여하세요!</p>
+      <input id="p-name" class="p-input" type="text" maxlength="16" placeholder="이름 입력" />
+      <button id="p-join-btn" class="p-btn">참여하기</button>
+    </section>
+
+    <!-- 대기 -->
+    <section id="p-wait" class="p-view hidden">
+      <div class="play-logo small">
+        <span class="logo-david">DAVID</span><span class="logo-quiz">BIBLE QUIZ</span>
+      </div>
+      <p class="p-hello">환영합니다, <b id="p-myname"></b>님!</p>
+      <div class="p-myscore">내 점수: <b id="p-score">0</b>점</div>
+      <p class="p-wait-msg" id="p-wait-msg">진행자가 문제를 시작할 때까지 기다려 주세요.</p>
+    </section>
+
+    <!-- 문제/보기 -->
+    <section id="p-question" class="p-view hidden">
+      <div class="p-topbar">
+        <span id="p-qnum"></span>
+        <span class="p-myscore-mini">내 점수 <b id="p-score2">0</b></span>
+      </div>
+      <div class="p-qtext" id="p-qtext"></div>
+      <div class="p-options" id="p-options">
+        <p class="p-wait-opt" id="p-wait-opt">잠시 후 보기가 나타납니다...</p>
+      </div>
+      <div class="p-answered hidden" id="p-answered">답안 제출 완료! 결과를 기다리세요.</div>
+    </section>
+
+    <!-- 정답 공개 -->
+    <section id="p-reveal" class="p-view hidden">
+      <div class="p-result-icon" id="p-result-icon"></div>
+      <div class="p-result-text" id="p-result-text"></div>
+      <div class="p-myscore">내 점수: <b id="p-score3">0</b>점</div>
+    </section>
+
+    <!-- 순위 -->
+    <section id="p-rank" class="p-view hidden">
+      <h2 class="p-title">현재 순위</h2>
+      <div class="p-myrank" id="p-myrank"></div>
+      <ol class="p-ranklist" id="p-ranklist"></ol>
+    </section>
+
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="questions.js"></script>
+  <script src="play.js"></script>
+</body>
+</html>
