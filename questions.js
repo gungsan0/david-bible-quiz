@@ -21,7 +21,7 @@ const QUIZ_TITLE = "다윗 성경 퀴즈 대회";
 const QUIZ_SUBTITLE = "말씀을 알고, 믿음을 세우는 시간!";
 
 const QUESTIONS = [
-  { q: "하나님께서 사무엘을 보내 다윗에게 기름 부음하게 하신 곳은 어디입니까?", options: ["베들레헴", "예루살렘", "헤브론", "길갈"], answer: 0, points: 100, time: 30 },
+  { q: "하나님은 사무엘 선지자에게 뿔에 기름을 채워 어느 동네로 가라고 하셨나요? God told the prophet Samuel to fill his horn with oil and go to which town?", options: ["예루살렘 (Jerusalem)", "나사렛 (Nazareth)", "베들레헴 (Bethlehem)", "여리고 (Jericho)"], answer: 2, points: 50, time: 30 },
   { q: "다윗은 이새의 몇 번째 아들입니까?", options: ["첫째", "일곱째", "막내(여덟째)", "둘째"], answer: 2, points: 100, time: 30 },
   { q: "다윗이 처음에 사울 왕을 위해 한 일은 무엇입니까?", options: ["전쟁에 나감", "수금을 거둠", "세금을 냈다", "수금(리라)을 타 앤긴시켰다"], answer: 3, points: 100, time: 30 },
   { q: "다윗이 쓰러뜨린 블레셋 사람 장수의 이름은?", options: ["골리앗", "아비멜렉", "나바론", "아각"], answer: 0, points: 150, time: 30 },
