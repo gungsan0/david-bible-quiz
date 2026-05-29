@@ -7,11 +7,12 @@
 // ===================================================================
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  databaseURL: "https://YOUR_PROJECT-default-rtdb.firebaseio.com",
-  projectId: "YOUR_PROJECT",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyCqP6CTbAYsDRcxc_5ikjCVOWaEktcCkTw",
+  authDomain: "quiz-platform-2f91a.firebaseapp.com",
+  databaseURL: "https://quiz-platform-2f91a-default-rtdb.firebaseio.com",
+  projectId: "quiz-platform-2f91a",
+  storageBucket: "quiz-platform-2f91a.firebasestorage.app",
+  messagingSenderId: "820753258499",
+  appId: "1:820753258499:web:bd2f409de1af8c56341636",
+  measurementId: "G-7R3X27455X"
 };
