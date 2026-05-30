@@ -300,7 +300,7 @@ document.getElementById('btn-show-opt').onclick = () => {
   getState(st => {
     const q = QUESTIONS[st.index];
     const sec = q.time || 30;
-    gameRef.update({ phase: 'question', showOptions: true, endTime: Date.now() + sec * 1000 });
+    gameRef.update({ phase: 'question', showOptions: true, timeLimit: sec, endTime: Date.now() + sec * 1000 });
   });
 };
 
