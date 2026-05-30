@@ -224,6 +224,13 @@ body {
 .p-opt-3 .p-opt-label { background: linear-gradient(180deg,#ff8f8f,#e04e4e); color:#330505;}
 .p-opt.selected { border-color: var(--gold); background: rgba(246,201,69,0.25); }
 .p-opt:disabled { opacity: 0.75; cursor: default; }
+.p-wait-notice { color: #e07d30; text-align: center; margin-top: 12px; font-size: 13px; line-height: 1.5; opacity: 0.85; }
+.p-timer-wrap { width: 100%; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+.p-timer-bar-bg { flex: 1; height: 10px; background: rgba(255,255,255,0.12); border-radius: 6px; overflow: hidden; }
+.p-timer-bar-fill { height: 100%; background: linear-gradient(90deg,var(--gold),#ff9800); border-radius: 6px; transition: width 0.2s linear; }
+.p-timer-num { font-size: 22px; font-weight: 900; color: var(--gold); min-width: 36px; text-align: right; }
+.p-timer-num.p-timer-urgent { color: #ff4444; animation: timerPulse 0.5s infinite alternate; }
+@keyframes timerPulse { from { transform: scale(1); } to { transform: scale(1.15); } }
 .p-answered { margin-top: 18px; text-align: center; color: var(--green-l); font-weight: 700; }
 
 .p-result-icon { font-size: 90px; text-align: center; }
