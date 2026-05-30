@@ -1,91 +1,121 @@
-admin.js// ===================================================================
-// admin.js - 문제 편집기
-// 문제를 화면에서 편집하고 questions.js 코드를 생성합니다.
-// ===================================================================
+// admin.js — 문제 편집기 (새 admin.html UI 전용)
 
 let editing = [];
+let currentIdx = 0;
 
 function blankQ() {
-  return { q: '', options: ['', '', '', ''], answer: 0, points: 100, time: 30 };
+  return { q: '', options: ['', '', '', ''], answer: 0, points: 100, time: 30, verseRef: '', verseText: '' };
 }
 
-function render() {
-  const list = document.getElementById('q-list');
+function renderList() {
+  const list = document.getElementById('q-list-items');
+  if (!list) return;
   list.innerHTML = '';
   editing.forEach((q, idx) => {
-    const card = document.createElement('div');
-    card.className = 'q-card';
-    let optsHtml = '';
-    for (let i = 0; i < 4; i++) {
-      const checked = q.answer === i ? 'checked' : '';
-      optsHtml +=
-        '<div class="q-opts-row">' +
-          '<span class="lbl">' + String.fromCharCode(65 + i) + '</span>' +
-          '<input type="text" data-idx="' + idx + '" data-opt="' + i + '" class="opt-in" value="' + escapeAttr(q.options[i] || '') + '" placeholder="보기 ' + (i + 1) + '" />' +
-          '<label><input type="radio" name="ans-' + idx + '" data-idx="' + idx + '" data-ans="' + i + '" ' + checked + ' /> 정답</label>' +
-        '</div>';
-    }
-    card.innerHTML =
-      '<button class="q-del" data-del="' + idx + '">삭제</button>' +
-      '<h3>문제 ' + (idx + 1) + '</h3>' +
-      '<label>문제 내용</label>' +
-      '<input type="text" class="q-in" data-idx="' + idx + '" value="' + escapeAttr(q.q) + '" placeholder="문제를 입력하세요" />' +
-      '<label style="margin-top:10px">보기 (4개) / 정답 선택</label>' +
-      optsHtml +
-      '<div class="q-meta">' +
-        '<div><label>배점</label><input type="number" class="pt-in" data-idx="' + idx + '" value="' + (q.points || 100) + '" /></div>' +
-        '<div><label>제한시간(초)</label><input type="number" class="tm-in" data-idx="' + idx + '" value="' + (q.time || 30) + '" /></div>' +
-      '</div>';
-    list.appendChild(card);
-  });
-  bindInputs();
-  document.getElementById('status').textContent = '총 ' + editing.length + '문제';
-}
-
-function escapeAttr(s) { return (s || '').replace(/&/g, '&amp;').replace(/"/g, '&quot;'); }
-
-function bindInputs() {
-  document.querySelectorAll('.q-in').forEach(el => el.oninput = e => { editing[+e.target.dataset.idx].q = e.target.value; });
-  document.querySelectorAll('.opt-in').forEach(el => el.oninput = e => { editing[+e.target.dataset.idx].options[+e.target.dataset.opt] = e.target.value; });
-  document.querySelectorAll('input[type=radio]').forEach(el => el.onchange = e => { editing[+e.target.dataset.idx].answer = +e.target.dataset.ans; });
-  document.querySelectorAll('.pt-in').forEach(el => el.oninput = e => { editing[+e.target.dataset.idx].points = +e.target.value || 0; });
-  document.querySelectorAll('.tm-in').forEach(el => el.oninput = e => { editing[+e.target.dataset.idx].time = +e.target.value || 30; });
-  document.querySelectorAll('.q-del').forEach(el => el.onclick = e => {
-    if (confirm('이 문제를 삭제할까요?')) { editing.splice(+e.target.dataset.del, 1); render(); }
+    const d = document.createElement('div');
+    d.className = 'q-item' + (idx === currentIdx ? ' active' : '');
+    d.textContent = (idx + 1) + '. ' + (q.q ? q.q.substring(0, 24) + (q.q.length > 24 ? '...' : '') : '(빈 문제)');
+    d.onclick = () => selectQ(idx);
+    list.appendChild(d);
   });
 }
 
-function loadFromQuestions() {
-  editing = JSON.parse(JSON.stringify(typeof QUESTIONS !== 'undefined' ? QUESTIONS : []));
-  render();
+function selectQ(idx) {
+  currentIdx = idx;
+  const q = editing[idx];
+  document.getElementById('f-q').value = q.q || '';
+  document.getElementById('f-o0').value = (q.options && q.options[0]) || '';
+  document.getElementById('f-o1').value = (q.options && q.options[1]) || '';
+  document.getElementById('f-o2').value = (q.options && q.options[2]) || '';
+  document.getElementById('f-o3').value = (q.options && q.options[3]) || '';
+  document.querySelectorAll('input[name=answer]').forEach(r => {
+    r.checked = (parseInt(r.value) === (q.answer || 0));
+  });
+  document.getElementById('f-points').value = q.points || 100;
+  document.getElementById('f-time').value = q.time || 30;
+  document.getElementById('f-verse-ref').value = q.verseRef || '';
+  document.getElementById('f-verse-text').value = q.verseText || '';
+  renderList();
+}
+
+function saveQuestion() {
+  if (!editing[currentIdx]) return;
+  const q = editing[currentIdx];
+  q.q = document.getElementById('f-q').value.trim();
+  q.options = [
+    document.getElementById('f-o0').value.trim(),
+    document.getElementById('f-o1').value.trim(),
+    document.getElementById('f-o2').value.trim(),
+    document.getElementById('f-o3').value.trim()
+  ];
+  const checked = document.querySelector('input[name=answer]:checked');
+  q.answer = checked ? parseInt(checked.value) : 0;
+  q.points = parseInt(document.getElementById('f-points').value) || 100;
+  q.time = parseInt(document.getElementById('f-time').value) || 30;
+  q.verseRef = document.getElementById('f-verse-ref').value.trim();
+  q.verseText = document.getElementById('f-verse-text').value.trim();
+  renderList();
+  const msg = document.getElementById('saved-msg');
+  if (msg) { msg.style.display = 'inline'; setTimeout(() => { msg.style.display = 'none'; }, 2000); }
+}
+
+function addQuestion() {
+  editing.push(blankQ());
+  currentIdx = editing.length - 1;
+  renderList();
+  selectQ(currentIdx);
+}
+
+function escJs(s) {
+  if (!s) return '';
+  return s.replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, '\\n');
 }
 
 function generateCode() {
-  let out = '';
-  out += '// questions.js - 아래 전체를 복사하여 GitHub questions.js 에 붙여넣으세요\n\n';
-  out += 'const QUIZ_TITLE = ' + JSON.stringify(typeof QUIZ_TITLE !== 'undefined' ? QUIZ_TITLE : '다윗 성경 퀴즈 대회') + ';\n';
-  out += 'const QUIZ_SUBTITLE = ' + JSON.stringify(typeof QUIZ_SUBTITLE !== 'undefined' ? QUIZ_SUBTITLE : '말씀을 알고, 믿음을 세우는 시간!') + ';\n\n';
-  out += 'const QUESTIONS = [\n';
-  editing.forEach(q => {
-    out += '  { q: ' + JSON.stringify(q.q) +
-      ', options: ' + JSON.stringify(q.options) +
-      ', answer: ' + q.answer +
+  saveQuestion();
+  let lines = [];
+  lines.push('const QUIZ_TITLE = "다윗 성경 퀴즈 대회";');
+  lines.push('const QUIZ_SUBTITLE = "말씀을 알고, 믿음을 세우는 시간!";');
+  lines.push('');
+  lines.push('const QUESTIONS = [');
+  editing.forEach((q, i) => {
+    const opts = q.options.map(o => "'" + escJs(o) + "'").join(', ');
+    const vRef = escJs(q.verseRef || '');
+    const vTxt = escJs(q.verseText || '');
+    lines.push('  { q: ' + "'" + escJs(q.q) + "'" +
+      ', options: [' + opts + ']' +
+      ', answer: ' + (q.answer || 0) +
       ', points: ' + (q.points || 100) +
-      ', time: ' + (q.time || 30) + ' },\n';
+      ', time: ' + (q.time || 30) +
+      ', verseRef: ' + "'" + vRef + "'" +
+      ', verseText: ' + "'" + vTxt + "'" +
+      ' }' + (i < editing.length - 1 ? ',' : ''));
   });
-  out += '];\n';
-  const ta = document.getElementById('code-out');
-  ta.classList.remove('hidden');
-  ta.value = out;
-  ta.select();
-  try { document.execCommand('copy'); document.getElementById('status').textContent = '코드 생성 완료! (클립보드에 복사됨) questions.js 에 붙여넣으세요'; }
-  catch (e) { document.getElementById('status').textContent = '코드 생성 완료! 아래 코드를 복사하세요'; }
-  ta.scrollIntoView({ behavior: 'smooth' });
+  lines.push('];');
+  document.getElementById('output-code').value = lines.join('\n');
 }
 
-document.getElementById('btn-add').onclick = document.getElementById('btn-add2').onclick = () => { editing.push(blankQ()); render(); };
-document.getElementById('btn-gen').onclick = document.getElementById('btn-gen2').onclick = generateCode;
-document.getElementById('btn-load').onclick = loadFromQuestions;
+function copyCode() {
+  const ta = document.getElementById('output-code');
+  ta.select();
+  document.execCommand('copy');
+  alert('코드가 복사되었습니다! GitHub에서 questions.js 파일에 붙여넣으세요.');
+}
 
-// 시작 시 현재 문제 불러오기
-loadFromQuestions();
+window.addEventListener('DOMContentLoaded', () => {
+  if (typeof QUESTIONS !== 'undefined' && QUESTIONS.length > 0) {
+    editing = QUESTIONS.map(q => ({
+      q: q.q || '',
+      options: q.options ? [...q.options] : ['', '', '', ''],
+      answer: q.answer || 0,
+      points: q.points || 100,
+      time: q.time || 30,
+      verseRef: q.verseRef || '',
+      verseText: q.verseText || ''
+    }));
+  } else {
+    editing = [blankQ()];
+  }
+  renderList();
+  if (editing.length > 0) selectQ(0);
+});
