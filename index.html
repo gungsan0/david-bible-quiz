@@ -7,11 +7,8 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="screen-main">
-  <!-- ====== 메인(프로젝터) 화면 6:4 비율 ====== -->
   <div class="stage-wrap">
     <div class="stage" id="stage">
-
-      <!-- 상단 로고 바 -->
       <header class="topbar">
         <div class="logo">
           <span class="logo-david">DAVID</span>
@@ -21,8 +18,6 @@
           <div class="qnum" id="qnum"></div>
         </div>
       </header>
-
-      <!-- 대기 화면 (시작 전) -->
       <section class="view view-lobby" id="view-lobby">
         <h1 class="lobby-title">다윗 성경 퀴즈 대회</h1>
         <p class="lobby-sub">말씀을 알고, 믿음을 세우는 시간!</p>
@@ -32,40 +27,32 @@
         </div>
         <div class="players-count" id="lobby-players">참여자 0명</div>
       </section>
-
-      <!-- 문제 화면 -->
       <section class="view view-question hidden" id="view-question">
         <div class="timer-bar">
           <div class="timer-fill" id="timer-fill"></div>
         </div>
-        <div class="timer-num" id="timer-num">30</div>
+        <div class="timer-row">
+          <div class="timer-num" id="timer-num">30</div>
+          <div class="answer-count" id="answer-count"></div>
+        </div>
         <div class="q-text" id="q-text"></div>
         <div class="options" id="options"></div>
       </section>
-
-      <!-- 정답 공개 화면 -->
       <section class="view view-reveal hidden" id="view-reveal">
         <div class="reveal-answer" id="reveal-answer"></div>
-        <div class="reveal-stat" id="reveal-stat"></div>
         <div class="reveal-verse hidden" id="reveal-verse"></div>
+        <div class="reveal-stat" id="reveal-stat"></div>
       </section>
-
-      <!-- 순위 화면 -->
       <section class="view view-rank hidden" id="view-rank">
         <h2 class="rank-title">현재 순위</h2>
         <ol class="rank-list" id="rank-list"></ol>
       </section>
-
-      <!-- 최종 결과 화면 -->
       <section class="view view-final hidden" id="view-final">
         <h2 class="rank-title final-title">🏆 최종 순위</h2>
         <ol class="rank-list" id="final-list"></ol>
       </section>
-
-    </div><!-- /stage -->
-  </div><!-- /stage-wrap -->
-
-  <!-- 진행자 컨트롤 패널 (하단 고정) -->
+    </div>
+  </div>
   <div class="host-panel" id="host-panel">
     <div class="host-toggle" id="btn-host-toggle">진행 패널 ▲</div>
     <div class="host-body" id="host-body">
@@ -78,8 +65,6 @@
       <button class="hbtn" id="btn-final">최종 결과</button>
     </div>
   </div>
-
-  <!-- 라이브러리 -->
   <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
