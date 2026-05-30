@@ -179,6 +179,10 @@ body {
 .hbtn { background: #1c1c1c; color: var(--white); border: 1px solid var(--gold2);
   border-radius: 8px; padding: 8px 14px; font-size: 14px; cursor: pointer; font-weight: 700; }
 .hbtn:hover { background: var(--gold2); color: #1a1200; }
+.hbtn-danger { background: #3a1010; border-color: #c0392b; color: #ff9b9b; }
+.hbtn-danger:hover { background: #c0392b; color: #fff; }
+.hbtn-green { background: #0d2a0d; border-color: var(--green); color: var(--green-l); font-weight: 900; }
+.hbtn-green:hover { background: var(--green); color: #fff; }
 
 /* =========================================================
    참여자(모바일) 화면
