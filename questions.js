@@ -152,53 +152,53 @@ const QUESTIONS = [
   },
 
   {
-    q: "선지자 나단이 다윗의 죄를 책망하기 위해 사용한 비유는 무엇입니까?",
-    options: ["잃어버린 양", "가난한 자의 어린 양", "포도원 농부", "씨 뿌리는 자"],
-    answer: 1,
-    points: 150,
-    time: 30,
-    verseRef: "사무엘하 12:3",
-    verseText: "가난한 사람은 아무것도 없고 다만 자기가 사서 기르는 작은 암양 새끼 한 마리뿐이라 그 암양이 그와 그의 자녀와 함께 자라며 그가 먹는 것을 먹으며 그의 잔으로 마시며 그의 품에 누우니 그에게는 딸처럼 되었더라"
-  },
-
-  {
-    q: "다윗이 나단의 책망을 들은 후 한 말은 무엇입니까?",
-    options: ["나는 왕이다", "내가 여호와께 죄를 지었노라", "당신이 틀렸다", "나는 모른다"],
+    q: "하나님의 법궤를 옮길 때, 소들이 뛰므로 궤를 붙들었다가 죽은 사람은? When moving the Ark of God, who died when he took hold of the Ark because the oxen stumbled?",
+    options: ["아효 (Ahio)", "웃사 (Uzzah)", "엘리에셀 (Eliezer)", "나답 (Nadab)"],
     answer: 1,
     points: 100,
     time: 30,
-    verseRef: "사무엘하 12:13",
-    verseText: "다윗이 나단에게 이르되 내가 여호와께 죄를 지었노라 하매 나단이 다윗에게 말하되 여호와께서도 당신의 죄를 사하셨나니 당신이 죽지 아니하려니와"
+    verseRef: "사무엘하 6:6-7",
+    verseText: "... 소들이 뛰므로 웃사가 손을 들어 하나님의 궤를 붙들었더니 여호와 하나님이 웃사가 잘못함으로 말미암아 진노하사 그를 그 곳에서 치시니 그가 거기 하나님의 궤 곁에서 죽으니라\n\n... Uzzah reached out and took hold of the ark of God, because the oxen stumbled. The LORD's anger burned against Uzzah because of his irreverent act; therefore God struck him down, and he died there beside the ark of God."
   },
 
   {
-    q: "다윗의 아들 압살롬이 반란을 일으킨 후 다윗은 예루살렘을 어떻게 하였습니까?",
-    options: ["끝까지 싸웠다", "도망쳐 나갔다", "항복하였다", "숨었다"],
-    answer: 1,
+    q: "하나님의 법궤를 옮길 때, 소들이 뛰어 웃사가 궤를 붙들게 되어 죽게 된 타작 마당의 이름은? What is the name of the threshing floor where Uzzah died after taking hold of the Ark when the oxen stumbled?",
+    options: ["나곤 (Nakon)", "아라우나 (Araunah)", "기스 (Kish)", "엘리 (Eli)"],
+    answer: 0,
     points: 100,
     time: 30,
-    verseRef: "사무엘하 15:14",
-    verseText: "다윗이 예루살렘에 있는 자기 신하들에게 이르되 일어나 도망하자 그렇지 아니하면 우리가 압살롬에게서 피하지 못하리라"
+    verseRef: "사무엘하 6:6",
+    verseText: "그들이 나곤의 타작 마당에 이르러서는 소들이 뛰므로 웃사가 손을 들어 하나님의 궤를 붙들었더니\n\nWhen they came to the threshing floor of Nakon, Uzzah reached out and took hold of the ark of God, because the oxen stumbled."
   },
 
   {
-    q: "압살롬이 전투 중 어떻게 죽었습니까?",
-    options: ["칼에 찔려", "나무에 머리카락이 걸려", "강에 빠져", "화살에 맞아"],
+    q: "하나님의 법궤를 오벧에돔의 집에서 예루살렘으로 옮길 때, 다윗이 힘을 다해 춤을 추며 입고 있었던 옷은 무엇인가요? When moving the Ark of God from the house of Obed-edom to Jerusalem, what was David wearing as he danced with all his might?",
+    options: ["세마포 속바지 (Linen undergarments)", "베 에봇 (Linen ephod)", "겉옷 자락 (Robe)", "베옷 (Sackcloth)"],
     answer: 1,
     points: 100,
     time: 30,
-    verseRef: "사무엘하 18:9",
-    verseText: "압살롬이 다윗의 부하들 앞에서 노새를 탔는데 노새가 큰 상수리나무 아래로 지나갈 때에 압살롬의 머리가 그 상수리나무에 걸리매 그는 하늘과 땅 사이에 매달리고 그가 탔던 노새는 그 아래로 빠져나가니라"
+    verseRef: "사무엘하 6:14",
+    verseText: "다윗이 여호와 앞에서 힘을 다하여 춤을 추는데 그 때에 다윗이 베 에봇을 입었더라\n\nWearing a linen ephod, David was dancing before the LORD with all his might,"
   },
 
   {
-    q: "다윗이 압살롬의 죽음 소식을 들었을 때 어떻게 반응했습니까?",
-    options: ["기뻐했다", "슬피 울었다", "침묵했다", "하나님께 감사했다"],
-    answer: 1,
+    q: "다윗이 요나단과의 약속을 기억하며 은총을 베푼 요나단의 아들로, 두 발을 다 절던 사람은? Who was Jonathan's son, lame in both feet, to whom David showed kindness in memory of his promise to Jonathan?",
+    options: ["아도니야 (Adonijah)", "이슈보셋 (Ish-bosheth)", "암논 (Amnon)", "므비보셋 (Mephibosheth)"],
+    answer: 3,
     points: 100,
     time: 30,
-    verseRef: "사무엘하 18:33",
-    verseText: "왕의 마음이 심히 괴로워 문 위 방에 올라가서 우니라 그가 올라갈 때에 말하기를 내 아들 압살롬아 내 아들 내 아들 압살롬아 차라리 내가 너를 대신하여 죽었더면 압살롬 내 아들아 내 아들아 하였더라"
+    verseRef: "사무엘하 9:3-6",
+    verseText: "왕이 이르되 사울의 집에 아직도 남은 사람이 없느냐 내가 그 사람에게 하나님의 은총을 베풀고자 하노라 하니 시바가 왕께 아뢰되 요나단의 아들 하나가 있는데 다리 저는 자니이다 하니라 ... 사울의 손자 요나단의 아들 므비보셋이 다윗에게 나아와 그 앞에 엎드려 절하매 ...\n\nThe king asked, \"Is there no one still alive from the house of Saul to whom I can show God's kindness?\"\nZiba answered the king, \"There is still a son of Jonathan; he is lame in both feet.\"\n ... When Mephibosheth son of Jonathan, the son of Saul, came to David, he bowed down to pay him honor. ..."
+  },
+
+  {
+    q: "다윗이 요나단과의 약속을 지키기 위해 그의 아들 므비보셋에게 준 것은 무엇인가요? What did David give to Jonathan's son Mephibosheth to keep his promise to Jonathan?",
+    options: ["왕의 보좌 (The royal throne)", "요나단의 군복 (Jonathan's armor)", "사울의 모든 밭 (Saul's land)", "이스라엘의 절반 (Half of Israel)"],
+    answer: 2,
+    points: 100,
+    time: 30,
+    verseRef: "사무엘하 9:7",
+    verseText: "다윗이 그에게 이르되 무서워하지 말라 내가 반드시 네 아버지 요나단으로 말미암아 네게 은총을 베풀리라 내가 네 할아버지 사울의 모든 밭을 다 네게 도로 주겠고 또 너는 항상 내 상에서 떡을 먹을지니라 하니\n\n\"Don't be afraid,\" David said to him, \"for I will surely show you kindness for the sake of your father Jonathan. I will restore to you all the land that belonged to your grandfather Saul, and you will always eat at my table.\""
   },
 
   {
