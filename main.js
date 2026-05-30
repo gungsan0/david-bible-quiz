@@ -77,6 +77,16 @@ if (el) { el.textContent = ''; el.classList.remove('all-answered'); }
 // 각 참여자의 고정 포지션 저장 (name -> {side, x, y, rotation})
 const playerPositions = {};
 
+function clearPlayerNames() {
+// playerPositions 객체 초기화
+Object.keys(playerPositions).forEach(k => delete playerPositions[k]);
+// DOM 이름 태그 모두 제거
+const leftEl = document.getElementById('player-names-left');
+const rightEl = document.getElementById('player-names-right');
+if (leftEl) leftEl.innerHTML = '';
+if (rightEl) rightEl.innerHTML = '';
+}
+
 function placePlayerName(name, side) {
 // 랜덤 회전 (-45 ~ 45도)
 const rotation = Math.floor(Math.random() * 91) - 45;
@@ -88,7 +98,7 @@ const maxAttempts = 50;
 const placedOnSide = Object.values(playerPositions).filter(p => p.side === side);
 
 // 이름 태그 예상 크기 (%)
-const tagW = 40; // 퍼센트
+const tagW = 40;
 const tagH = 12;
 
 do {
@@ -265,6 +275,7 @@ function getState(cb) { gameRef.once('value', s => cb(s.val() || { phase: 'lobby
 
 document.getElementById('btn-reset').onclick = () => {
 if (!confirm('대회를 리셋합니다.\n모든 참여자와 점수가 삭제되고 로비 화면으로 돌아갑니다.')) return;
+clearPlayerNames();
 Promise.all([
 playersRef.set(null),
 gameRef.set({ phase: 'lobby', index: 0, showOptions: false, endTime: null })
