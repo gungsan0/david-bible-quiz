@@ -182,12 +182,17 @@ playersRef.on('value', snap => {
 // ===================================================================
 function getState(cb) { gameRef.once('value', s => cb(s.val() || { phase: 'lobby', index: 0 })); }
 
-document.getElementById('btn-start').onclick = () => {
-  if (!confirm('대회를 처음부터 시작(리셋)합니다. 모든 참여자와 점수가 초기화됩니다.')) return;
+document.getElementById('btn-reset').onclick = () => {
+  if (!confirm('대회를 리셋합니다.\n모든 참여자와 점수가 삭제되고 로비 화면으로 돌아갑니다.')) return;
   Promise.all([
     playersRef.set(null),
     gameRef.set({ phase: 'lobby', index: 0, showOptions: false, endTime: null })
   ]);
+};
+
+document.getElementById('btn-start').onclick = () => {
+  if (!confirm('퀴즈를 시작합니다.\n첫 번째 문제로 넘어갑니다.')) return;
+  gameRef.set({ phase: 'question', index: 0, showOptions: false, endTime: null });
 };
 
 document.getElementById('btn-show-q').onclick = () => {
