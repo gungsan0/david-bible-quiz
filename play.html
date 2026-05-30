@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<title>다윗 성경 퀴즈 - 참여하기</title>
-<link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>다윗 성경 퀴즈 - 참여하기</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body class="screen-play">
   <div class="play-wrap">
 
     <!-- 닉네임 입력 -->
     <section id="p-join" class="p-view">
-      <div class="play-logo">
+      <div class="play-logo"
         <span class="logo-david">DAVID</span>
         <span class="logo-quiz">BIBLE QUIZ</span>
       </div>
@@ -29,6 +29,7 @@
       <p class="p-hello">환영합니다, <b id="p-myname"></b>님!</p>
       <div class="p-myscore">내 점수: <b id="p-score">0</b>점</div>
       <p class="p-wait-msg" id="p-wait-msg">진행자가 문제를 시작할 때까지 기다려 주세요.</p>
+      <p class="p-wait-notice">이 화면을 닫으면 약 30초 후 자동으로 참여가 취소됩니다.</p>
     </section>
 
     <!-- 문제/보기 -->
@@ -36,6 +37,12 @@
       <div class="p-topbar">
         <span id="p-qnum"></span>
         <span class="p-myscore-mini">내 점수 <b id="p-score2">0</b></span>
+      </div>
+      <div class="p-timer-wrap hidden" id="p-timer-wrap">
+        <div class="p-timer-bar-bg">
+          <div class="p-timer-bar-fill" id="p-timer-fill"></div>
+        </div>
+        <div class="p-timer-num" id="p-timer-num">--</div>
       </div>
       <div class="p-qtext" id="p-qtext"></div>
       <div class="p-options" id="p-options">
