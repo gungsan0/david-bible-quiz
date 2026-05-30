@@ -48,6 +48,46 @@ body {
 .topbar .logo-quiz { font-size: 2.1vh; }
 .qnum { font-size: 2.6vh; color: var(--gold); font-weight: 700; }
 
+/* 교회 헤더 (탑바 중앙) */
+.church-header {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 1.2vw;
+  pointer-events: none;
+}
+.church-logo-svg {
+  width: 5.5vh;
+  height: 5.5vh;
+  flex: 0 0 auto;
+  filter: drop-shadow(0 0 8px rgba(76,175,50,0.5));
+}
+.church-logo-svg svg {
+  width: 100%;
+  height: 100%;
+}
+.church-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.church-name-ko {
+  font-size: 2.2vh;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.church-name-en {
+  font-size: 1.4vh;
+  font-weight: 600;
+  color: var(--green-l);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
 .view { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; }
 
 /* 대기 화면 */
