@@ -6,7 +6,7 @@ const QUESTIONS = [
     options: ["예루살렘 (Jerusalem)", "나사렛 (Nazareth)", "베들레헴 (Bethlehem)", "여리고 (Jericho)"],
     answer: 2,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘상 16:1",
     verseText: "여호와께서 사무엘에게 이르시되 내가 이미 사울을 버려 이스라엘 왕이 되지 못하게 하였거늘 네가 그를 위하여 언제까지 슬퍼하겠느냐 너는 뿔에 기름을 채워 가지고 가라 내가 너를 베들레헴 사람 이새에게로 보내리니 이는 내가 그의 아들 중에서 한 왕을 보았느니라 하시는지라\n\nhe LORD said to Samuel, \"How long will you mourn for Saul, since I have rejected him as king over Israel? Fill your horn with oil and be on your way; I am sending you to Jesse of Bethlehem. I have chosen one of his sons to be king.\""
   },
@@ -15,8 +15,8 @@ const QUESTIONS = [
     q: "사울 왕의 마음이 악령으로 괴로울 때, 다윗이 왕궁에 들어가 연주한 악기는? When King Saul was tormented by an evil spirit, what instrument did David play in the palace?",
     options: ["나팔 (Trumpet)", "수금 (Lyre)", "피리 (Flute)", "드럼 (Drum)"],
     answer: 1,
-    points: 50,
-    time: 30,
+    points: 100,
+    time: 20,
     verseRef: "사무엘상 16:23",
     verseText: "하나님께서 부리시는 악령이 사울에게 이를 때에 다윗이 수금을 들고 와서 손으로 탄즉 사울이 상쾌하여 낫고 악령이 그에게서 떠나더라\n\nWhenever the spirit from God came on Saul, David would take up his lyre and play. Then relief would come to Saul; he would feel better, and the evil spirit would leave him."
   },
@@ -26,7 +26,7 @@ const QUESTIONS = [
     options: ["네 규빗 한 뼘 (Four cubits and a span)", "여섯 규빗 한 뼘 (Six cubits and a span)", "일곱 규빗 (Seven cubits)", "여덟 규빗 두 뼘 (Eight cubits and two spans)"],
     answer: 1,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘상 17:4",
     verseText: "블레셋 사람들의 진영에서 싸움을 돋우는 자가 왔는데 그의 이름은 골리앗이요 가드 사람이라 그의 키는 여섯 규빗 한 뼘이요\n\nA champion named Goliath, who was from Gath, came out of the Philistine camp. His height was six cubits and a span."
   },
@@ -36,7 +36,7 @@ const QUESTIONS = [
     options: ["3개 (3)", "4개 (4)", "5개 (5)", "6개 (6)"],
     answer: 2,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘상 17:40",
     verseText: "손에 막대기를 가지고 시내에서 매끄러운 돌 다섯을 골라서 자기 목자의 제구 곧 주머니에 넣고 손에 물매를 가지고 블레셋 사람에게로 나아가니라\n\nThen he took his staff in his hand, chose five smooth stones from the stream, put them in the pouch of his shepherd's bag and, with his sling in his hand, approached the Philistine."
   },
@@ -46,7 +46,7 @@ const QUESTIONS = [
     options: ["창 (Spear)", "활 (Bow)", "칼 (Sword)", "방패 (Shield)"],
     answer: 2,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘상 17:51",
     verseText: "다윗이 달려가서 블레셋 사람을 밟고 그의 칼을 그 칼 집에서 빼내어 그 칼로 그를 죽이고 그의 머리를 베니 블레셋 사람들이 자기 용사의 죽음을 보고 도망하는지라\n\nDavid ran and stood over him. He took hold of the Philistine's sword and drew it from the sheath. After he killed him, he cut off his head with the sword.\nWhen the Philistines saw that their hero was dead, they turned and ran."
   },
@@ -56,7 +56,7 @@ const QUESTIONS = [
     options: ["미갈 (Michal)", "아비가일 (Abigail)", "밧세바 (Bathsheba)", "하깃 (Haggith)"],
     answer: 0,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘상 19:12",
     verseText: "미갈이 다윗을 창에서 달아 내리매 그가 피하여 도망하니라\n\nSo Michal let David down through a window, and he fled and escaped."
   },
@@ -66,7 +66,7 @@ const QUESTIONS = [
     options: ["무교병 (Unleavened bread)", "진설병 (The bread of the Presence)", "보리떡 (Barley bread)", "만나 (Manna)"],
     answer: 1,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘상 21:6",
     verseText: "제사장이 그 거룩한 떡을 주었으니 거기는 진설병 곧 여호와 앞에서 물려 낸 떡밖에 없었음이라 이 떡은 더운 떡을 드리는 날에 물려 낸 것이더라\n\nSo the priest gave him the consecrated bread, since there was no bread there except the bread of the Presence that had been removed from before the LORD and replaced by hot bread on the day it was taken away."
   },
@@ -76,7 +76,7 @@ const QUESTIONS = [
     options: ["대문짝 (The gates of the city)", "성벽 (The city walls)", "성막 문 (The door of the tabernacle)", "제단의 뿔 (The horns of the altar)"],
     answer: 0,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘상 21:13",
     verseText: "그들 앞에서 그의 행동을 변하여 미친 체하고 대문짝에 그적거리며 침을 수염에 흘리매\n\nSo he pretended to be insane in their presence; and while he was in their hands he acted like a madman, making marks on the doors of the gate and letting saliva run down his beard."
   },
@@ -86,7 +86,7 @@ const QUESTIONS = [
     options: ["에덴 굴 (Eden Cave)", "아둘람 굴 (Adullam Cave)", "소돔 굴 (Sodom Cave)", "마므레 굴 (Mamre Cave)"],
     answer: 1,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘상 22:1",
     verseText: "그러므로 다윗이 그 곳을 떠나 아둘람 굴로 도망하매 그의 형제와 아버지의 온 집이 듣고 그리로 내려가서 그에게 이르렀고\n\nDavid left Gath and escaped to the cave of Adullam. When his brothers and his father's household heard about it, they went down to him there."
   },
@@ -96,7 +96,7 @@ const QUESTIONS = [
     options: ["시내 산 (Mount Sinai)", "갈멜 산 (Mount Carmel)", "길보아 산 (Mount Gilboa)", "감람 산 (Mount of Olives)"],
     answer: 2,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘상 31:8",
     verseText: "그 이튿날 블레셋 사람들이 죽은 자를 벗기러 왔다가 사울과 그의 세 아들이 길보아 산에서 죽은 것을 보고\n\nThe next day, when the Philistines came to strip the dead, they found Saul and his three sons fallen on Mount Gilboa."
   },
@@ -105,8 +105,8 @@ const QUESTIONS = [
     q: "다윗이 처음 유다의 왕이 되었을 때, 사울의 군대 장관 아브넬이 사울의 아들 이스보셋을 세워 왕으로 삼은 성읍은 어디인가요? When David first became king of Judah, where was the city where Abner, Saul's commander, set up Saul's son Ish-bosheth as king?",
     options: ["헤브론 (Hebron)", "베들레헴 (Bethlehem)", "마하나임 (Mahanaim)", "예루살렘 (Jerusalem)"],
     answer: 2,
-    points: 150,
-    time: 30,
+    points: 100,
+    time: 20,
     verseRef: "사무엘하 2:8-9",
     verseText: "사울의 군사령관 넬의 아들 아브넬이 이미 사울의 아들 이스보셋을 데리고 마하나임으로 건너가 길르앗과 아술과 이스르엘과 에브라임과 베냐민과 온 이스라엘의 왕으로 삼았더라\n\nMeanwhile, Abner son of Ner, the commander of Saul's army, had taken Ish-Bosheth son of Saul and brought him over to Mahanaim. He made him king over Gilead, Ashuri and Jezreel, and also over Ephraim, Benjamin and all Israel.\nMeanwhile, Abner son of Ner, the commander of Saul's army, had taken Ish-Bosheth son of Saul and brought him over to Mahanaim."
   },
@@ -116,7 +116,7 @@ const QUESTIONS = [
     options: ["5년 7개월 (5 years 7 months)", "6년 7개월 (6 years 7 months)", "7년 6개월 (7 years 6 months)", "8년 6개월 (8 years 6 months)"],
     answer: 2,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘하 2:11",
     verseText: "다윗이 헤브론에서 유다 족속의 왕이 된 날 수는 칠 년 육 개월이더라\n\nThe length of time David was king in Hebron over Judah was seven years and six months."
   },
@@ -126,7 +126,7 @@ const QUESTIONS = [
     options: ["점점 약해졌다 (Weaker and weaker)", "점점 강하여갔다 (Stronger and stronger)", "수적으로 감소했다 (Decreased in number)", "일시적으로 위축됐다 (Temporarily diminished)"],
     answer: 1,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘하 3:1",
     verseText: "사울의 집과 다윗의 집 사이에 전쟁이 오래매 다윗은 점점 강하여 가고 사울의 집은 점점 약하여 가니라\n\nThe war between the house of Saul and the house of David lasted a long time. David grew stronger and stronger, while the house of Saul grew weaker and weaker."
   },
@@ -136,7 +136,7 @@ const QUESTIONS = [
     options: ["20세 (20)", "30세 (30)", "40세 (40)", "50세 (50)"],
     answer: 1,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘하 5:4",
     verseText: "다윗이 나이가 삼십 세에 왕위에 올라 사십 년 동안 다스렸으되\n\nDavid was thirty years old when he became king, and he reigned forty years."
   },
@@ -146,7 +146,7 @@ const QUESTIONS = [
     options: ["조각목 (Acacia wood)", "백향목 (Cedar)", "잔나무 (Cypress)", "감람나무 (Olive wood)"],
     answer: 1,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘하 5:11",
     verseText: "두로 왕 히람이 다윗에게 사절들과 백향목과 목수와 석수를 보내매 그들이 다윗을 위하여 집을 지으니\n\nNow Hiram king of Tyre sent envoys to David, along with cedar logs and carpenters and stonemasons, and they built a palace for David."
   },
@@ -156,7 +156,7 @@ const QUESTIONS = [
     options: ["아효 (Ahio)", "웃사 (Uzzah)", "엘리에셀 (Eliezer)", "나답 (Nadab)"],
     answer: 1,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘하 6:6-7",
     verseText: "... 소들이 뛰므로 웃사가 손을 들어 하나님의 궤를 붙들었더니 여호와 하나님이 웃사가 잘못함으로 말미암아 진노하사 그를 그 곳에서 치시니 그가 거기 하나님의 궤 곁에서 죽으니라\n\n... Uzzah reached out and took hold of the ark of God, because the oxen stumbled. The LORD's anger burned against Uzzah because of his irreverent act; therefore God struck him down, and he died there beside the ark of God."
   },
@@ -166,7 +166,7 @@ const QUESTIONS = [
     options: ["나곤 (Nakon)", "아라우나 (Araunah)", "기스 (Kish)", "엘리 (Eli)"],
     answer: 0,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘하 6:6",
     verseText: "그들이 나곤의 타작 마당에 이르러서는 소들이 뛰므로 웃사가 손을 들어 하나님의 궤를 붙들었더니\n\nWhen they came to the threshing floor of Nakon, Uzzah reached out and took hold of the ark of God, because the oxen stumbled."
   },
@@ -176,7 +176,7 @@ const QUESTIONS = [
     options: ["세마포 속바지 (Linen undergarments)", "베 에봇 (Linen ephod)", "겉옷 자락 (Robe)", "베옷 (Sackcloth)"],
     answer: 1,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘하 6:14",
     verseText: "다윗이 여호와 앞에서 힘을 다하여 춤을 추는데 그 때에 다윗이 베 에봇을 입었더라\n\nWearing a linen ephod, David was dancing before the LORD with all his might,"
   },
@@ -186,7 +186,7 @@ const QUESTIONS = [
     options: ["아도니야 (Adonijah)", "이슈보셋 (Ish-bosheth)", "암논 (Amnon)", "므비보셋 (Mephibosheth)"],
     answer: 3,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘하 9:3-6",
     verseText: "왕이 이르되 사울의 집에 아직도 남은 사람이 없느냐 내가 그 사람에게 하나님의 은총을 베풀고자 하노라 하니 시바가 왕께 아뢰되 요나단의 아들 하나가 있는데 다리 저는 자니이다 하니라 ... 사울의 손자 요나단의 아들 므비보셋이 다윗에게 나아와 그 앞에 엎드려 절하매 ...\n\nThe king asked, \"Is there no one still alive from the house of Saul to whom I can show God's kindness?\"\nZiba answered the king, \"There is still a son of Jonathan; he is lame in both feet.\"\n ... When Mephibosheth son of Jonathan, the son of Saul, came to David, he bowed down to pay him honor. ..."
   },
@@ -196,7 +196,7 @@ const QUESTIONS = [
     options: ["왕의 보좌 (The royal throne)", "요나단의 군복 (Jonathan's armor)", "사울의 모든 밭 (Saul's land)", "이스라엘의 절반 (Half of Israel)"],
     answer: 2,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘하 9:7",
     verseText: "다윗이 그에게 이르되 무서워하지 말라 내가 반드시 네 아버지 요나단으로 말미암아 네게 은총을 베풀리라 내가 네 할아버지 사울의 모든 밭을 다 네게 도로 주겠고 또 너는 항상 내 상에서 떡을 먹을지니라 하니\n\n\"Don't be afraid,\" David said to him, \"for I will surely show you kindness for the sake of your father Jonathan. I will restore to you all the land that belonged to your grandfather Saul, and you will always eat at my table.\""
   },
@@ -206,7 +206,7 @@ const QUESTIONS = [
     options: ["라바 (Rabbah)", "예루살렘 (Jerusalem)", "길갈 (Gilgal)", "시글락 (Ziklag)"],
     answer: 1,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘하 11:1",
     verseText: "그 해가 돌아와 왕들이 출전할 때가 되매 다윗이 요압과 그에게 있는 그의 부하들과 온 이스라엘 군대를 보내니 그들이 암몬 자손을 멸하고 랍바를 에워쌌고 다윗은 예루살렘에 그대로 있더라\n\nIn the spring, at the time when kings go off to war, David sent Joab out with the king's men and the whole Israelite army. They destroyed the Ammonites and besieged Rabbah. But David remained in Jerusalem."
   },
@@ -215,8 +215,8 @@ const QUESTIONS = [
     q: "나단 선지자가 다윗의 죄를 지적할 때 비유로 든 예쁜 동물은 무엇인가요? What beautiful animal did Nathan the prophet use as a metaphor to point out David's sin?",
     options: ["숫양 (Ram)", "비둘기 새끼 (Young pigeon)", "어린 염소 (Young goat)", "어린 암양 (Ewe lamb)"],
     answer: 3,
-    points: 150,
-    time: 30,
+    points: 100,
+    time: 20,
     verseRef: "사무엘하 12:3",
     verseText: "가난한 사람은 아무것도 없고 자기가 사서 기르는 작은 암양 새끼 한 마리뿐이라 그 암양 새끼는 그와 그의 자식과 함께 자라며 그가 먹는 것을 먹으며 그의 잔으로 마시며 그의 품에 누우므로 그에게는 딸처럼 되었거늘\n\nbut the poor man had nothing except one little ewe lamb he had bought. He raised it, and it grew up with him and his children. It shared his food, drank from his cup and even slept in his arms. It was like a daughter to him."
   },
@@ -226,7 +226,7 @@ const QUESTIONS = [
     options: ["머리카락 (Hair)", "키 (Height)", "얼굴 (Face)", "목소리 (Voice)"],
     answer: 0,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘하 14:26",
     verseText: "그의 머리털이 무거우므로 연말마다 깎았으며 그의 머리 털을 깎을 때에 그것을 달아본즉 그의 머리털이 왕의 저울로 이백 세겔이었더라\n\nWhenever he cut the hair of his head—he used to cut his hair once a year because it became too heavy for him—he would weigh it, and its weight was two hundred shekels by the royal standard."
   },
@@ -236,7 +236,7 @@ const QUESTIONS = [
     options: ["후새 (Hushai)", "시바 (Ziba)", "잇대 (Ittai)", "바르실래 (Barzillai)"],
     answer: 0,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘하 15:32",
     verseText: "다윗이 하나님을 경배하는 마루턱에 이를 때에 아렉 사람 후새가 옷을 찢고 흙을 머리에 덮어쓰고 다윗을 맞으러 온지라\n\nWhen David arrived at the summit, where people used to worship God, Hushai the Arkite was there to meet him, his robe torn and dust on his head."
   },
@@ -246,7 +246,7 @@ const QUESTIONS = [
     options: ["아히도벨 (Ahithophel)", "바르실래 (Barzillai)", "아비나답 (Abinadab)", "아비삭 (Abishag)"],
     answer: 1,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘하 19:32",
     verseText: "바르실래는 매우 늙어 나이가 팔십 세라 그는 큰 부자이므로 왕이 마하나임에 머물 때에 그가 왕을 공궤하였더라\n\nNow Barzillai was very old, eighty years of age. He had provided for the king during his stay in Mahanaim, for he was a very wealthy man."
   },
@@ -255,8 +255,8 @@ const QUESTIONS = [
     q: "사울 왕과 요나단이 길보아 산에서 죽은 후, 다윗이 그들의 뼈를 가져다 어디에 장사했나요? After King Saul and Jonathan died on Mount Gilboa, where did David take their bones and bury them?",
     options: ["길레앗 야베스 (Jabesh-gilead)", "기브아 (Gibeah)", "기스의 묘 (The tomb of Kish)", "벧산 성벽 (The walls of Beth-shan)"],
     answer: 2,
-    points: 50,
-    time: 30,
+    points: 100,
+    time: 20,
     verseRef: "사무엘하 21:14",
     verseText: "사울과 그의 아들 요나단의 뼈와 함께 베냐민 땅 셀라에서 그의 아버지 기스의 묘에 장사하되 모두 왕의 명령을 따라 행하니라 그 후에야 하나님이 그 땅을 위한 기도를 들으시니라\n\nThey buried the bones of Saul and his son Jonathan in the tomb of Saul's father Kish, at Zela in Benjamin, and did everything the king commanded. After that, God answered prayer in behalf of the land."
   },
@@ -266,7 +266,7 @@ const QUESTIONS = [
     options: ["요셉밧세벳 (Josheb-basshebeth)", "엘아살 (Eleazar)", "브나야 (Benaiah)", "삼마 (Shammah)"],
     answer: 3,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘하 23:11-12",
     verseText: "그 다음은 하랄 사람 아게의 아들 삼마라 블레셋 사람들이 사기가 올라 거기 녹두나무가 가득한 한쪽 밭에 모이매 백성들은 블레셋 사람들 앞에서 도망하되 그는 그 밭 가운데 서서 막아 블레셋 사람들을 친지라 여호와께서 큰 구원을 이루시니라\n\nNext to him was Shammah son of Agee the Hararite. When the Philistines banded together at a place where there was a field full of lentils, Israel's troops fled from them. But Shammah took his stand in the middle of the field. He defended it and struck the Philistines down, and the LORD brought about a great victory."
   },
@@ -276,7 +276,7 @@ const QUESTIONS = [
     options: ["1천 명 (1,000)", "1만 명 (10,000)", "7만 명 (70,000)", "10만 명 (100,000)"],
     answer: 2,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘하 24:15",
     verseText: "이에 여호와께서 그 아침부터 정하신 때까지 전염병을 이스라엘에게 내리시니 단에서부터 브엘세바까지 백성의 죽은 자가 칠만 명이라\n\nSo the LORD sent a plague on Israel from that morning until the end of the time designated, and seventy thousand of the people from Dan to Beersheba died."
   },
@@ -286,7 +286,7 @@ const QUESTIONS = [
     options: ["나곤 (Nakon)", "아라우나 (Araunah)", "보아스 (Boaz)", "아비나답 (Abinadab)"],
     answer: 1,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘하 24:16",
     verseText: "천사가 예루살렘을 향하여 그의 손을 들어 멸하려 하더니 여호와께서 이 재앙 내리심을 뉘우치사 백성을 멸하는 천사에게 이르시되 족하다 이제는 네 손을 거두라 하시니 여호와의 사자가 여부스 사람 아라우나의 타작 마당 곁에 있는지라\n\nWhen the angel stretched out his hand to destroy Jerusalem, the LORD relented concerning the disaster and said to the angel who was afflicting the people, \"Enough! Withdraw your hand.\" The angel of the LORD was then at the threshing floor of Araunah the Jebusite."
   },
@@ -296,7 +296,7 @@ const QUESTIONS = [
     options: ["은 30세겔 (30 shekels of silver)", "은 50세겔 (50 shekels of silver)", "은 400세겔 (400 shekels of silver)", "금 600세겔 (600 shekels of gold)"],
     answer: 1,
     points: 100,
-    time: 30,
+    time: 20,
     verseRef: "사무엘하 24:24",
     verseText: "왕이 아라우나에게 이르되 그렇지 아니하다 내가 값을 주고 네게서 사리라 값 없이는 내 하나님 여호와께 번제를 드리지 아니하리라 하고 다윗이 은 오십 세겔로 타작 마당과 소를 사고\n\nBut the king replied to Araunah, \"No, I insist on paying you for it. I will not sacrifice to the LORD my God burnt offerings that cost me nothing.\"\nSo David bought the threshing floor and the oxen and paid fifty shekels of silver for them."
   }
