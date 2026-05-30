@@ -61,7 +61,7 @@ function startPlayerTimer(seconds, endTime) {
         } else {
             num.classList.remove('p-timer-urgent');
         }
-        if (remain <= 0) stopPlayerTimer();
+        if (remain <= 0) { stopPlayerTimer(); document.querySelectorAll('#p-options .p-opt').forEach(b => { b.disabled = true; }); }
     }
     tick();
     pTimerInterval = setInterval(tick, 200);
