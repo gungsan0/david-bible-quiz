@@ -202,112 +202,102 @@ const QUESTIONS = [
   },
 
   {
-    q: "다윗이 므비보셋에게 은혜를 베푼 이유는 무엇입니까?",
-    options: ["부자였기 때문에", "요나단의 아들이었기 때문에", "용사였기 때문에", "선지자였기 때문에"],
+    q: "다윗의 군대 장관 요압이 암몬 자손과 싸울 때, 다윗은 어디에 머물렀나요? Where did David remain when his army commander Joab fought against the Ammonites?",
+    options: ["라바 (Rabbah)", "예루살렘 (Jerusalem)", "길갈 (Gilgal)", "시글락 (Ziklag)"],
     answer: 1,
     points: 100,
     time: 30,
-    verseRef: "사무엘하 9:1",
-    verseText: "다윗이 이르되 사울의 집에 아직도 남은 사람이 있느냐 내가 요나단으로 말미암아 그 사람에게 은총을 베풀리라 하니라"
+    verseRef: "사무엘하 11:1",
+    verseText: "그 해가 돌아와 왕들이 출전할 때가 되매 다윗이 요압과 그에게 있는 그의 부하들과 온 이스라엘 군대를 보내니 그들이 암몬 자손을 멸하고 랍바를 에워쌌고 다윗은 예루살렘에 그대로 있더라\n\nIn the spring, at the time when kings go off to war, David sent Joab out with the king's men and the whole Israelite army. They destroyed the Ammonites and besieged Rabbah. But David remained in Jerusalem."
   },
 
   {
-    q: "다윗이 인구 조사를 행한 후 하나님의 벌로 선택한 것은 무엇이었습니까?",
-    options: ["7년 기근", "3달 전쟁 패배", "3일 전염병", "원수에게 쫓김"],
-    answer: 2,
+    q: "나단 선지자가 다윗의 죄를 지적할 때 비유로 든 예쁜 동물은 무엇인가요? What beautiful animal did Nathan the prophet use as a metaphor to point out David's sin?",
+    options: ["숫양 (Ram)", "비둘기 새끼 (Young pigeon)", "어린 염소 (Young goat)", "어린 암양 (Ewe lamb)"],
+    answer: 3,
     points: 150,
     time: 30,
-    verseRef: "사무엘하 24:13-14",
-    verseText: "다윗이 갓에게 이르되 내가 매우 난처하도다 청하건대 여호와의 손에 빠지게 하소서 그의 자비가 크시오니 내가 사람의 손에는 빠지지 아니하겠나이다 하는지라"
+    verseRef: "사무엘하 12:3",
+    verseText: "가난한 사람은 아무것도 없고 자기가 사서 기르는 작은 암양 새끼 한 마리뿐이라 그 암양 새끼는 그와 그의 자식과 함께 자라며 그가 먹는 것을 먹으며 그의 잔으로 마시며 그의 품에 누우므로 그에게는 딸처럼 되었거늘\n\nbut the poor man had nothing except one little ewe lamb he had bought. He raised it, and it grew up with him and his children. It shared his food, drank from his cup and even slept in his arms. It was like a daughter to him."
   },
 
   {
-    q: "다윗이 여부스 족속에게서 빼앗아 자기 이름을 붙인 성은?",
-    options: ["다윗성", "시온성", "예루살렘성", "하나님의 성"],
+    q: "압살롬이 반역하여 예루살렘 성으로 들어올 때, 성경에서 그의 용모를 설명하며 특별히 언급한 것은? When Absalom rebelled and entered Jerusalem, what about his appearance was described particularly in the Bible?",
+    options: ["머리카락 (Hair)", "키 (Height)", "얼굴 (Face)", "목소리 (Voice)"],
     answer: 0,
     points: 100,
     time: 30,
-    verseRef: "사무엘하 5:7",
-    verseText: "다윗이 시온 산성을 빼앗았으니 이것이 다윗 성이더라"
+    verseRef: "사무엘하 14:26",
+    verseText: "그의 머리털이 무거우므로 연말마다 깎았으며 그의 머리 털을 깎을 때에 그것을 달아본즉 그의 머리털이 왕의 저울로 이백 세겔이었더라\n\nWhenever he cut the hair of his head—he used to cut his hair once a year because it became too heavy for him—he would weigh it, and its weight was two hundred shekels by the royal standard."
   },
 
   {
-    q: "하나님께서 다윗에게 주신 영원한 언약의 핵심 내용은 무엇입니까?",
-    options: ["모든 원수를 물리친다", "다윗의 왕위를 영원히 견고히 한다", "아브라함 언약을 이룬다", "노아 언약을 기억한다"],
-    answer: 1,
-    points: 100,
-    time: 30,
-    verseRef: "사무엘하 7:16",
-    verseText: "네 집과 네 나라가 내 앞에서 영원히 보전되고 네 왕위가 영원히 견고하리라 하셨다 하라"
-  },
-
-  {
-    q: "다윗이 골리앗과 싸우러 나갈 때 사울이 다윗에게 입혀준 것은?",
-    options: ["갑옷과 투구", "흰 옷", "왕관", "아무것도 안 입혀줌"],
+    q: "다윗이 압살롬의 반역을 피해 피난 갈 때, 머리에 흙을 덮어쓰고 찾아온 충성스러운 친구는? When David escaped Absalom's rebellion, which loyal friend came with dust on his head?",
+    options: ["후새 (Hushai)", "시바 (Ziba)", "잇대 (Ittai)", "바르실래 (Barzillai)"],
     answer: 0,
     points: 100,
     time: 30,
-    verseRef: "사무엘상 17:38",
-    verseText: "사울이 자기 군복을 다윗에게 입히고 놋 투구를 그 머리에 씌우고 또 그에게 갑옷을 입히매"
+    verseRef: "사무엘하 15:32",
+    verseText: "다윗이 하나님을 경배하는 마루턱에 이를 때에 아렉 사람 후새가 옷을 찢고 흙을 머리에 덮어쓰고 다윗을 맞으러 온지라\n\nWhen David arrived at the summit, where people used to worship God, Hushai the Arkite was there to meet him, his robe torn and dust on his head."
   },
 
   {
-    q: "다윗이 왕이 되기 전 양을 치며 살았던 곳의 아버지 이름은?",
-    options: ["사무엘", "이새", "아비나답", "요나단"],
+    q: "다윗이 압살롬의 반역을 피해 피난 갔다 예루살렘으로 돌아올 때, 그에게 많은 먹을 것을 공급했던 80세 노인은 누구인가요? When David was returning to Jerusalem after fleeing from Absalom's rebellion, who was the 80-year-old man who supplied him with many provisions?",
+    options: ["아히도벨 (Ahithophel)", "바르실래 (Barzillai)", "아비나답 (Abinadab)", "아비삭 (Abishag)"],
     answer: 1,
+    points: 100,
+    time: 30,
+    verseRef: "사무엘하 19:32",
+    verseText: "바르실래는 매우 늙어 나이가 팔십 세라 그는 큰 부자이므로 왕이 마하나임에 머물 때에 그가 왕을 공궤하였더라\n\nNow Barzillai was very old, eighty years of age. He had provided for the king during his stay in Mahanaim, for he was a very wealthy man."
+  },
+
+  {
+    q: "사울 왕과 요나단이 길보아 산에서 죽은 후, 다윗이 그들의 뼈를 가져다 어디에 장사했나요? After King Saul and Jonathan died on Mount Gilboa, where did David take their bones and bury them?",
+    options: ["길레앗 야베스 (Jabesh-gilead)", "기브아 (Gibeah)", "기스의 묘 (The tomb of Kish)", "벧산 성벽 (The walls of Beth-shan)"],
+    answer: 2,
     points: 50,
     time: 30,
-    verseRef: "사무엘상 16:11",
-    verseText: "사무엘이 이새에게 이르되 네 아들들이 다 여기 있느냐 이새가 이르되 아직 막내가 남았는데 그는 양을 지키나이다"
+    verseRef: "사무엘하 21:14",
+    verseText: "사울과 그의 아들 요나단의 뼈와 함께 베냐민 땅 셀라에서 그의 아버지 기스의 묘에 장사하되 모두 왕의 명령을 따라 행하니라 그 후에야 하나님이 그 땅을 위한 기도를 들으시니라\n\nThey buried the bones of Saul and his son Jonathan in the tomb of Saul's father Kish, at Zela in Benjamin, and did everything the king commanded. After that, God answered prayer in behalf of the land."
   },
 
   {
-    q: "다윗 왕이 언약궤를 예루살렘으로 가져올 때 기뻐하여 한 행동은?",
-    options: ["노래를 불렀다", "여호와 앞에서 춤을 추었다", "제물을 드렸다", "기도하였다"],
-    answer: 1,
+    q: "다윗의 용사 세 명 중 한 명으로, 단독으로 블레셋 용사들과 녹두 밭에서 싸워 승리한 용사는 누구인가요? Among David's three mighty men, who single-handedly fought the Philistine warriors in a field of lentils and won?",
+    options: ["요셉밧세벳 (Josheb-basshebeth)", "엘아살 (Eleazar)", "브나야 (Benaiah)", "삼마 (Shammah)"],
+    answer: 3,
     points: 100,
     time: 30,
-    verseRef: "사무엘하 6:14",
-    verseText: "다윗이 여호와 앞에서 힘을 다하여 춤을 추는데 그 때에 다윗이 베 에봇을 입었더라"
+    verseRef: "사무엘하 23:11-12",
+    verseText: "그 다음은 하랄 사람 아게의 아들 삼마라 블레셋 사람들이 사기가 올라 거기 녹두나무가 가득한 한쪽 밭에 모이매 백성들은 블레셋 사람들 앞에서 도망하되 그는 그 밭 가운데 서서 막아 블레셋 사람들을 친지라 여호와께서 큰 구원을 이루시니라\n\nNext to him was Shammah son of Agee the Hararite. When the Philistines banded together at a place where there was a field full of lentils, Israel's troops fled from them. But Shammah took his stand in the middle of the field. He defended it and struck the Philistines down, and the LORD brought about a great victory."
   },
 
   {
-    q: "다윗의 아들 중 왕이 되려고 반역을 꾀한 자는 누구였습니까?",
-    options: ["솔로몬", "압살롬", "아도니야", "암논"],
-    answer: 1,
+    q: "다윗의 인구 조사 범죄로 인해 하나님이 전염병 재앙을 내리셨을 때, 단에서부터 브엘세바까지 죽은 백성의 수는 얼마인가요? When God sent a plague as punishment for David's census sin, how many people died from Dan to Beersheba?",
+    options: ["1천 명 (1,000)", "1만 명 (10,000)", "7만 명 (70,000)", "10만 명 (100,000)"],
+    answer: 2,
     points: 100,
     time: 30,
-    verseRef: "사무엘하 15:10",
-    verseText: "압살롬이 이스라엘 모든 지파에 정탐꾼을 보내 이르되 나팔 소리를 들으면 압살롬이 헤브론에서 왕이 되었다 하라 하니라"
+    verseRef: "사무엘하 24:15",
+    verseText: "이에 여호와께서 그 아침부터 정하신 때까지 전염병을 이스라엘에게 내리시니 단에서부터 브엘세바까지 백성의 죽은 자가 칠만 명이라\n\nSo the LORD sent a plague on Israel from that morning until the end of the time designated, and seventy thousand of the people from Dan to Beersheba died."
   },
 
   {
-    q: "다윗이 골리앗을 향해 나갈 때 한 말 중 올바른 것은?",
-    options: ["나의 힘으로 이기겠다", "만군의 여호와의 이름으로 나아간다", "왕의 칼로 이기겠다", "이스라엘의 지혜로 이기겠다"],
+    q: "전염병 재앙을 내리던 천사가 예루살렘을 멸하려 할 때 하나님께서 재앙 내리심을 멈추셨습니다. 그때 천사는 누구의 타작 마당 곁에 있었나요? When the angel who sent the plague was about to destroy Jerusalem, God stopped the calamity. Near whose threshing floor was the angel standing at that time?",
+    options: ["나곤 (Nakon)", "아라우나 (Araunah)", "보아스 (Boaz)", "아비나답 (Abinadab)"],
     answer: 1,
     points: 100,
     time: 30,
-    verseRef: "사무엘상 17:45",
-    verseText: "다윗이 블레셋 사람에게 이르되 너는 칼과 창과 단창으로 내게 나아 오거니와 나는 만군의 여호와의 이름 곧 네가 모욕하는 이스라엘 군대의 하나님의 이름으로 네게 나아가노라"
+    verseRef: "사무엘하 24:16",
+    verseText: "천사가 예루살렘을 향하여 그의 손을 들어 멸하려 하더니 여호와께서 이 재앙 내리심을 뉘우치사 백성을 멸하는 천사에게 이르시되 족하다 이제는 네 손을 거두라 하시니 여호와의 사자가 여부스 사람 아라우나의 타작 마당 곁에 있는지라\n\nWhen the angel stretched out his hand to destroy Jerusalem, the LORD relented concerning the disaster and said to the angel who was afflicting the people, \"Enough! Withdraw your hand.\" The angel of the LORD was then at the threshing floor of Araunah the Jebusite."
   },
 
   {
-    q: "다윗이 동굴에서 사울을 살려줄 때 사울을 죽이지 않은 이유는?",
-    options: ["두려워서", "여호와의 기름 부음 받은 자임으로", "도망칠 힘이 없어서", "신하들이 말려서"],
+    q: "다윗이 재앙을 멈추기 위해 제단을 쌓으려고 아라우나의 타작 마당과 소를 사면서 지불한 은의 무게는 얼마인가요? How much silver by weight did David pay to buy Araunah's threshing floor and oxen in order to build an altar and stop the plague?",
+    options: ["은 30세겔 (30 shekels of silver)", "은 50세겔 (50 shekels of silver)", "은 400세겔 (400 shekels of silver)", "금 600세겔 (600 shekels of gold)"],
     answer: 1,
     points: 100,
     time: 30,
-    verseRef: "사무엘상 24:6",
-    verseText: "그가 자기 사람들에게 이르되 내가 손을 들어 여호와의 기름 부음을 받은 내 주를 치는 것은 여호와께서 금하시는 것이니 그는 여호와의 기름 부음을 받은 자가 됨이니라 하고"
-  },
-
-  {
-    q: "다윗이 기름 부음을 받은 직후 어떤 일이 일어났습니까?",
-    options: ["왕이 되었다", "여호와의 영이 다윗에게 임했다", "큰 용사가 되었다", "사울을 이겼다"],
-    answer: 1,
-    points: 100,
-    time: 30,
-    verseRef: "사무엘상 16:13",
-    verseText: "사무엘이 기름 뿔을 가져다가 그의 형제 중에서 그에게 부었더니 이 날 이후로 다윗이 여호와의 영에게 크게 감동되니라 사무엘이 떠나서 라마로 가니라"
+    verseRef: "사무엘하 24:24",
+    verseText: "왕이 아라우나에게 이르되 그렇지 아니하다 내가 값을 주고 네게서 사리라 값 없이는 내 하나님 여호와께 번제를 드리지 아니하리라 하고 다윗이 은 오십 세겔로 타작 마당과 소를 사고\n\nBut the king replied to Araunah, \"No, I insist on paying you for it. I will not sacrifice to the LORD my God burnt offerings that cost me nothing.\"\nSo David bought the threshing floor and the oxen and paid fifty shekels of silver for them."
   }
 ];
