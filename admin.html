@@ -1,114 +1,66 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>다윗 성경 퀴즈 - 관리자</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    body { background:#111; color:#eee; font-family:'Malgun Gothic',sans-serif; margin:0; padding:20px; }
-    h1 { color:#c9a84c; text-align:center; margin-bottom:20px; }
-    .admin-wrap { display:flex; gap:20px; max-width:1200px; margin:0 auto; }
-    .q-list { width:220px; flex-shrink:0; }
-    .q-list h3 { color:#c9a84c; margin-bottom:10px; font-size:0.95rem; }
-    .q-item { padding:8px 12px; border-radius:6px; cursor:pointer; margin-bottom:4px; background:#1a1a1a; border:1px solid #333; font-size:0.85rem; transition:background 0.2s; }
-    .q-item:hover, .q-item.active { background:#2a2a1a; border-color:#c9a84c; color:#c9a84c; }
-    .q-editor { flex:1; }
-    .field { margin-bottom:14px; }
-    .field label { display:block; color:#aaa; font-size:0.85rem; margin-bottom:5px; }
-    .field input, .field textarea, .field select { width:100%; box-sizing:border-box; background:#1a1a1a; border:1px solid #444; color:#eee; padding:8px 10px; border-radius:6px; font-size:0.95rem; font-family:inherit; }
-    .field textarea { resize:vertical; min-height:60px; }
-    .field input:focus, .field textarea:focus { border-color:#c9a84c; outline:none; }
-    .opts-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
-    .opt-row { display:flex; gap:8px; align-items:center; }
-    .opt-label { color:#c9a84c; font-weight:bold; width:20px; flex-shrink:0; }
-    .opt-row input { flex:1; }
-    .radio-row { display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
-    .radio-row label { display:flex; align-items:center; gap:6px; cursor:pointer; color:#ccc; font-size:0.9rem; }
-    .radio-row input[type=radio] { width:auto; }
-    .btn-row { display:flex; gap:10px; margin-top:16px; flex-wrap:wrap; }
-    .btn { padding:10px 22px; border:none; border-radius:8px; cursor:pointer; font-size:0.95rem; font-weight:bold; font-family:inherit; }
-    .btn-save { background:#c9a84c; color:#000; }
-    .btn-save:hover { background:#e6c060; }
-    .btn-gen { background:#2d6a2d; color:#fff; }
-    .btn-gen:hover { background:#3a8a3a; }
-    .btn-add { background:#444; color:#eee; }
-    .btn-add:hover { background:#555; }
-    .output-area { margin-top:20px; }
-    .output-area label { color:#aaa; font-size:0.85rem; }
-    #output-code { width:100%; height:200px; background:#0d1117; color:#7ec8a0; border:1px solid #333; border-radius:8px; padding:12px; font-family:monospace; font-size:0.8rem; resize:vertical; box-sizing:border-box; }
-    .saved-msg { color:#4caf50; font-size:0.85rem; margin-left:10px; display:none; }
-    .verse-note { color:#888; font-size:0.8rem; margin-top:3px; }
-    .section-title { color:#c9a84c; font-size:0.9rem; font-weight:bold; border-bottom:1px solid #333; padding-bottom:5px; margin-bottom:10px; margin-top:18px; }
-  </style>
+  <link rel="stylesheet" href="style.css"/>
 </head>
-<body>
-<h1>⚙️ 관리자 — 문제 편집기</h1>
+<body class="screen-admin">
 <div class="admin-wrap">
-  <div class="q-list">
-    <h3>문제 목록</h3>
-    <div id="q-list-items"></div>
-    <button class="btn btn-add" onclick="addQuestion()" style="width:100%;margin-top:10px;">+ 문제 추가</button>
+  <h1>⚙️ 다윗 성경 퀴즈 - 문제 관리</h1>
+  <p class="hint">아래 표에서 문제를 직접 수정하세요. <b>저장</b>을 누르면 GitHub에 바로 반영됩니다. (최초 1회 GitHub 토큰 입력 필요)</p>
+
+  <div class="admin-bar">
+    <button id="btn-save">💾 저장 (GitHub 반영)</button>
+    <button class="sec" id="btn-token">🔑 토큰 설정</button>
+    <span class="admin-status" id="admin-status"></span>
   </div>
-  <div class="q-editor">
-    <div id="editor-panel">
-      <div class="section-title">문제 내용</div>
-      <div class="field">
-        <label>질문 (한국어 / English 병기 가능)</label>
-        <textarea id="f-q" rows="3" placeholder="질문을 입력하세요..."></textarea>
-      </div>
-      <div class="section-title">보기 (4개)</div>
-      <div class="opts-grid">
-        <div class="opt-row"><span class="opt-label">A</span><input id="f-o0" type="text" placeholder="보기 A" /></div>
-        <div class="opt-row"><span class="opt-label">B</span><input id="f-o1" type="text" placeholder="보기 B" /></div>
-        <div class="opt-row"><span class="opt-label">C</span><input id="f-o2" type="text" placeholder="보기 C" /></div>
-        <div class="opt-row"><span class="opt-label">D</span><input id="f-o3" type="text" placeholder="보기 D" /></div>
-      </div>
-      <div class="field" style="margin-top:12px;">
-        <label>정답 선택</label>
-        <div class="radio-row" id="f-answer-radios">
-          <label><input type="radio" name="answer" value="0" /> A</label>
-          <label><input type="radio" name="answer" value="1" /> B</label>
-          <label><input type="radio" name="answer" value="2" /> C</label>
-          <label><input type="radio" name="answer" value="3" /> D</label>
-        </div>
-      </div>
-      <div class="section-title">배점 및 시간</div>
-      <div style="display:flex;gap:16px;">
-        <div class="field" style="flex:1">
-          <label>배점 (점)</label>
-          <input id="f-points" type="number" value="100" min="10" max="1000" step="10" />
-        </div>
-        <div class="field" style="flex:1">
-          <label>제한시간 (초)</label>
-          <input id="f-time" type="number" value="30" min="5" max="120" step="5" />
-        </div>
-      </div>
-      <div class="section-title">정답 공개 시 표시할 성경 말씀</div>
-      <div class="field">
-        <label>성경 구절 (예: 사무엘상 16:13)</label>
-        <input id="f-verse-ref" type="text" placeholder="예: 사무엘상 16:13" />
-      </div>
-      <div class="field">
-        <label>말씀 내용</label>
-        <textarea id="f-verse-text" rows="3" placeholder="말씀 내용을 입력하세요..."></textarea>
-        <div class="verse-note">정답 공개 화면에 성경 구절과 함께 표시됩니다.</div>
-      </div>
-      <div class="btn-row">
-        <button class="btn btn-save" onclick="saveQuestion()">💾 저장</button>
-        <span class="saved-msg" id="saved-msg">저장됨 ✓</span>
-      </div>
-    </div>
-    <div class="output-area">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
-        <button class="btn btn-gen" onclick="generateCode()">📋 questions.js 코드 생성</button>
-        <button class="btn" style="background:#555;color:#eee;" onclick="copyCode()">복사</button>
-      </div>
-      <label>아래 코드를 복사해서 questions.js 파일에 붙여넣으세요:</label>
-      <textarea id="output-code" readonly></textarea>
+
+  <div class="admin-table-wrap">
+    <table class="admin-table" id="admin-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th style="min-width:220px">Q. 문제</th>
+          <th style="min-width:120px">A</th>
+          <th style="min-width:120px">B</th>
+          <th style="min-width:120px">C</th>
+          <th style="min-width:120px">D</th>
+          <th style="min-width:70px">정답</th>
+          <th style="min-width:70px">점수</th>
+          <th style="min-width:80px">시간(초)</th>
+          <th style="min-width:200px">성경 구절 (Bible Verse)</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="question-tbody"></tbody>
+      <tfoot>
+        <tr class="at-add-row">
+          <td colspan="11" style="text-align:center; padding:12px;">
+            <button class="at-add-btn" id="btn-add-row">➕ 문제 추가</button>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
+
+<!-- GitHub 토큰 입력 모달 -->
+<div class="modal-overlay hidden" id="token-modal">
+  <div class="modal-box">
+    <h2>🔑 GitHub Personal Access Token</h2>
+    <p>questions.js를 자동 저장하려면 GitHub PAT가 필요합니다.<br/>
+    <b>github.com → Settings → Developer settings → Personal access tokens</b><br/>
+    Classic tokens에서 <b>repo</b> 권한으로 생성하세요. 토큰은 이 기기에만 저장됩니다.</p>
+    <input class="modal-inp" type="password" id="token-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"/>
+    <div class="modal-btns">
+      <button class="btn-confirm" id="btn-token-save">저장</button>
+      <button class="btn-cancel" id="btn-token-cancel">취소</button>
     </div>
   </div>
 </div>
+
 <script src="questions.js"></script>
 <script src="admin.js"></script>
 </body>
