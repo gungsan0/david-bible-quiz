@@ -33,13 +33,22 @@
 
       <!-- 대기 화면 (로비) -->
       <section class="view view-lobby" id="view-lobby">
-        <h1 class="lobby-title">다윗 성경 퀴즈 대회</h1>
-        <p class="lobby-sub">말씀을 알고, 믿음을 세우는 시간!</p>
-        <div class="qr-box">
-          <div class="qr-img" id="qr-lobby"></div>
-          <p class="qr-text">휴대폰으로 QR코드를 스캔해<br/>참여하세요!</p>
+        <!-- 왼쪽 참여자 이름 영역 -->
+        <div class="player-names-area player-names-left" id="player-names-left"></div>
+
+        <!-- 가운데 콘텐츠 -->
+        <div class="lobby-center">
+          <h1 class="lobby-title">다윗 성경 퀴즈 대회</h1>
+          <p class="lobby-sub">말씀을 알고, 믿음을 세우는 시간!</p>
+          <div class="qr-box">
+            <div class="qr-img" id="qr-lobby"></div>
+            <p class="qr-text">휴대폰으로 QR코드를 스캔해<br/>참여하세요!</p>
+          </div>
+          <div class="players-count" id="lobby-players">참여자 0명</div>
         </div>
-        <div class="players-count" id="lobby-players">참여자 0명</div>
+
+        <!-- 오른쪽 참여자 이름 영역 -->
+        <div class="player-names-area player-names-right" id="player-names-right"></div>
       </section>
 
       <!-- 문제 화면 -->
