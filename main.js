@@ -46,7 +46,6 @@ function startTimer(seconds, endTime) {
 }
 
 // ---- 게임 상태 렌더링 ----
-let optionTimeout = null;
 function renderState(state) {
   if (!state) { showView('lobby'); return; }
   document.getElementById('qnum').textContent =
@@ -63,8 +62,6 @@ function renderState(state) {
     const optBox = document.getElementById('options');
     optBox.innerHTML = '';
     optBox.classList.remove('show');
-    clearTimeout(optionTimeout);
-    // 보기는 호스트가 '보기 공개'를 누르거나, showOptions=true일 때 표시
     if (state.showOptions) {
       renderOptions(q, optBox);
     }
@@ -88,6 +85,19 @@ function renderState(state) {
       document.getElementById('reveal-stat').textContent =
         total + '명 중 ' + correct + '명 정답! (+' + q.points + '점)';
     });
+    // 성경 말씀 표시
+    const verseEl = document.getElementById('reveal-verse');
+    if (verseEl) {
+      if (q.verseRef || q.verseText) {
+        verseEl.innerHTML =
+          (q.verseRef ? '<span class="verse-ref">' + q.verseRef + '</span>' : '') +
+          (q.verseText ? '<span class="verse-body">' + q.verseText + '</span>' : '');
+        verseEl.classList.remove('hidden');
+      } else {
+        verseEl.innerHTML = '';
+        verseEl.classList.add('hidden');
+      }
+    }
   } else if (state.phase === 'rank') {
     showView('rank');
     renderRank('rank-list');
@@ -106,7 +116,6 @@ function renderOptions(q, optBox) {
     div.innerHTML = '<span class="opt-label">' + String.fromCharCode(65 + i) + '</span><span class="opt-text">' + opt + '</span>';
     optBox.appendChild(div);
   });
-  // 약간의 지연 후 애니메이션
   setTimeout(() => optBox.classList.add('show'), 50);
 }
 
@@ -143,7 +152,6 @@ function getState(cb) { gameRef.once('value', s => cb(s.val() || { phase: 'lobby
 
 document.getElementById('btn-start').onclick = () => {
   if (!confirm('대회를 처음부터 시작(리셋)합니다. 모든 점수가 초기화됩니다.')) return;
-  // 점수 초기화하되 참여자 명단은 유지
   playersRef.once('value', snap => {
     const players = snap.val() || {};
     const updates = {};
@@ -167,7 +175,6 @@ document.getElementById('btn-show-opt').onclick = () => {
 
 document.getElementById('btn-reveal').onclick = () => {
   getState(st => {
-    // 점수 정산
     const q = QUESTIONS[st.index];
     playersRef.once('value', snap => {
       const players = snap.val() || {};
