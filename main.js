@@ -39,7 +39,7 @@ function startTimer(seconds, endTime) {
     const remain = Math.max(0, Math.ceil((endTime - Date.now()) / 1000));
     num.textContent = remain;
     fill.style.width = (remain / seconds * 100) + '%';
-    if (remain <= 0) clearInterval(timerInterval);
+    if (remain <= 0) { clearInterval(timerInterval); gameRef.once('value', s => { if (s.val() && s.val().phase === 'question') gameRef.update({ phase: 'reveal' }); }); }
   }
   tick();
   timerInterval = setInterval(tick, 200);
@@ -289,11 +289,11 @@ document.getElementById('btn-reset').onclick = () => {
 
 document.getElementById('btn-start').onclick = () => {
   if (!confirm('퀴즈를 시작합니다.\n첫 번째 문제로 넘어갑니다.')) return;
-  gameRef.set({ phase: 'question', index: 0, showOptions: false, endTime: null });
+  gameRef.set({ phase: 'question', index: 0, showOptions: false, endTime: null }); setTimeout(() => { getState(st => { if (st.phase !== 'question' || st.showOptions) return; const q = QUESTIONS[st.index]; const sec = q.time || 30; gameRef.update({ phase: 'question', showOptions: true, timeLimit: sec, endTime: Date.now() + sec * 1000 }); }); }, 3000);
 };
 
 document.getElementById('btn-show-q').onclick = () => {
-  getState(st => gameRef.update({ phase: 'question', showOptions: false, endTime: null }));
+  getState(st => gameRef.update({ phase: 'question', showOptions: false, endTime: null })); setTimeout(() => { getState(st => { if (st.phase !== 'question' || st.showOptions) return; const q = QUESTIONS[st.index]; const sec = q.time || 30; gameRef.update({ phase: 'question', showOptions: true, timeLimit: sec, endTime: Date.now() + sec * 1000 }); }); }, 3000);
 };
 
 document.getElementById('btn-show-opt').onclick = () => {
@@ -330,7 +330,7 @@ document.getElementById('btn-next').onclick = () => {
   getState(st => {
     const next = (st.index || 0) + 1;
     if (next >= QUESTIONS.length) { gameRef.update({ phase: 'final' }); return; }
-    gameRef.set({ phase: 'question', index: next, showOptions: false, endTime: null });
+    gameRef.set({ phase: 'question', index: next, showOptions: false, endTime: null }); setTimeout(() => { getState(st => { if (st.phase !== 'question' || st.showOptions) return; const q = QUESTIONS[st.index]; const sec = q.time || 30; gameRef.update({ phase: 'question', showOptions: true, timeLimit: sec, endTime: Date.now() + sec * 1000 }); }); }, 3000);
   });
 };
 
