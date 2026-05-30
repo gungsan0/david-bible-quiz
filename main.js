@@ -45,6 +45,31 @@ function startTimer(seconds, endTime) {
   timerInterval = setInterval(tick, 200);
 }
 
+// ---- 답변 완료 인원 표시 (문제 화면 중) ----
+let _answerWatcher = null;
+function watchAnswerCount(questionIndex) {
+  if (_answerWatcher) { playersRef.off('value', _answerWatcher); _answerWatcher = null; }
+  const el = document.getElementById('answer-count');
+  if (!el) return;
+  _answerWatcher = snap => {
+    const players = snap.val() || {};
+    const total = Object.keys(players).length;
+    let answered = 0;
+    Object.values(players).forEach(p => {
+      const ans = p.answers && p.answers[questionIndex];
+      if (ans !== undefined && ans !== null) answered++;
+    });
+    el.textContent = answered + ' / ' + total + '명 답변 완료';
+    el.classList.toggle('all-answered', total > 0 && answered >= total);
+  };
+  playersRef.on('value', _answerWatcher);
+}
+function stopWatchAnswerCount() {
+  if (_answerWatcher) { playersRef.off('value', _answerWatcher); _answerWatcher = null; }
+  const el = document.getElementById('answer-count');
+  if (el) { el.textContent = ''; el.classList.remove('all-answered'); }
+}
+
 // ---- 게임 상태 렌더링 ----
 function renderState(state) {
   if (!state) { showView('lobby'); return; }
@@ -55,6 +80,7 @@ function renderState(state) {
   if (state.phase === 'lobby') {
     showView('lobby');
     clearInterval(timerInterval);
+    stopWatchAnswerCount();
   } else if (state.phase === 'question') {
     showView('question');
     const q = QUESTIONS[state.index];
@@ -64,6 +90,9 @@ function renderState(state) {
     optBox.classList.remove('show');
     if (state.showOptions) {
       renderOptions(q, optBox);
+      watchAnswerCount(state.index);
+    } else {
+      stopWatchAnswerCount();
     }
     const sec = q.time || 30;
     if (state.endTime) startTimer(sec, state.endTime);
@@ -71,6 +100,7 @@ function renderState(state) {
   } else if (state.phase === 'reveal') {
     showView('reveal');
     clearInterval(timerInterval);
+    stopWatchAnswerCount();
     const q = QUESTIONS[state.index];
     document.getElementById('reveal-answer').innerHTML =
       '정답: <b>' + String.fromCharCode(65 + q.answer) + '. ' + q.options[q.answer] + '</b>';
@@ -100,9 +130,11 @@ function renderState(state) {
     }
   } else if (state.phase === 'rank') {
     showView('rank');
+    stopWatchAnswerCount();
     renderRank('rank-list');
   } else if (state.phase === 'final') {
     showView('final');
+    stopWatchAnswerCount();
     document.getElementById('qnum').textContent = '';
     renderRank('final-list');
   }
@@ -129,7 +161,7 @@ function renderRank(listId) {
     arr.slice(0, 10).forEach((p, i) => {
       const li = document.createElement('li');
       const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : (i + 1) + '위';
-      li.innerHTML = '<span class="rk-pos">' + medal + '</span><span class="rk-name">' + p.name + '</span><span class="rk-score">' + p.score + '점</span>';
+      li.innerHTML = '<span class="rk-pos">' + medal + '</span><span class="rk-name">' + p.name + '</span><span class="rk-score">' + p.score + '점 </span>';
       ol.appendChild(li);
     });
     if (arr.length === 0) ol.innerHTML = '<li class="rk-empty">아직 참여자가 없습니다</li>';
@@ -151,14 +183,11 @@ playersRef.on('value', snap => {
 function getState(cb) { gameRef.once('value', s => cb(s.val() || { phase: 'lobby', index: 0 })); }
 
 document.getElementById('btn-start').onclick = () => {
-  if (!confirm('대회를 처음부터 시작(리셋)합니다. 모든 점수가 초기화됩니다.')) return;
-  playersRef.once('value', snap => {
-    const players = snap.val() || {};
-    const updates = {};
-    Object.keys(players).forEach(k => { updates[k + '/score'] = 0; updates[k + '/answers'] = null; });
-    playersRef.update(updates);
-  });
-  gameRef.set({ phase: 'question', index: 0, showOptions: false, endTime: null });
+  if (!confirm('대회를 처음부터 시작(리셋)합니다. 모든 참여자와 점수가 초기화됩니다.')) return;
+  Promise.all([
+    playersRef.set(null),
+    gameRef.set({ phase: 'lobby', index: 0, showOptions: false, endTime: null })
+  ]);
 };
 
 document.getElementById('btn-show-q').onclick = () => {
