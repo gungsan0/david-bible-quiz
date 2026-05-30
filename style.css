@@ -288,3 +288,49 @@ body {
 .modal-btns button { flex: 1; padding: 12px; border-radius: 8px; border: none; font-weight: 800; cursor: pointer; font-size: 14px; }
 .modal-btns .btn-confirm { background: var(--gold2); color: #1a1200; }
 .modal-btns .btn-cancel { background: #333; color: #fff; }
+
+
+/* =========================================================
+로비 화면 - 참여자 이름 랜덤 배치 영역
+========================================================= */
+.view-lobby {
+  flex-direction: row;
+  align-items: stretch;
+  position: relative;
+  overflow: hidden;
+}
+
+.lobby-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 50%;
+  z-index: 2;
+}
+
+.player-names-area {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.player-name-tag {
+  position: absolute;
+  display: inline-block;
+  font-size: 2.8vh;
+  font-weight: 800;
+  color: var(--gold);
+  white-space: nowrap;
+  text-shadow: 0 0 12px rgba(246,201,69,0.5), 0 2px 8px rgba(0,0,0,0.8);
+  transform-origin: center center;
+  pointer-events: none;
+  animation: namePopIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+  letter-spacing: 0.04em;
+}
+
+@keyframes namePopIn {
+  from { opacity: 0; transform: scale(0.5); }
+  to   { opacity: 1; }
+}
