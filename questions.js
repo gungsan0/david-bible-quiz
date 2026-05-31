@@ -132,13 +132,13 @@ const QUESTIONS = [
   },
 
   {
-    q: "다윗이 온 이스라엘의 왕이 되었을 때의 나이는? How old was David when he became king of all Israel?",
-    options: ["20세 (20)", "30세 (30)", "40세 (40)", "50세 (50)"],
+    q: "다윗이 온 이스라엘의 왕이 되어 예루살렘에서 다스린 기간은? How long did David reign in Jerusalem as king of all Israel?",
+    options: ["27년 (27 years)", "33년 (33 years)", "37년 (37 years)", "43년 (43 years)"],
     answer: 1,
     points: 100,
     time: 20,
-    verseRef: "사무엘하 5:4",
-    verseText: "다윗이 나이가 삼십 세에 왕위에 올라 사십 년 동안 다스렸으되\n\nDavid was thirty years old when he became king, and he reigned forty years."
+    verseRef: "사무엘하 5:5",
+    verseText: "헤브론에서 칠 년 육 개월 동안 유다를 다스렸고 예루살렘에서 삼십삼 년 동안 온 이스라엘과 유다를 다스렸더라\n\nIn Hebron he reigned over Judah seven years and six months, and in Jerusalem he reigned over all Israel and Judah thirty-three years."
   },
 
   {
